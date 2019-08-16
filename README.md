@@ -14,4 +14,3 @@ Objetivo
 
 Foram utilizados programas desenvolvidos em Python durante o trabalho de mestrado, a fim de produzir sequências binárias aleatórias a partir de ACs. Os ACs e a produção das sequências binárias, podem ser empregados como um Gerador de Números Aleatórios.
 
-
