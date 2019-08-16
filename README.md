@@ -14,7 +14,8 @@ Objetivo
 
 Foram utilizados programas desenvolvidos em Python durante o trabalho de mestrado, a fim de produzir sequências binárias aleatórias a partir de ACs. Os ACs e a produção das sequências binárias, podem ser empregados como um Gerador de Números Aleatórios.
 
-Programa      Descrição do AC e Tipo de Coleta
+Programa
+Descrição do AC e Tipo de Coleta
 
 AC_R30        AC Raio 1 - unidimensional regra 30, coleta por linha
 
