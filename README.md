@@ -16,9 +16,9 @@ Foram utilizados programas desenvolvidos em Python durante o trabalho de mestrad
 
 Programa        Descrição do AC e Tipo de Coleta
 
-AC_R30    ==>   AC Raio 1 - unidimensional regra 30, coleta por linha
+AC_R30      ==>   AC Raio 1 - unidimensional regra 30, coleta por linha
 
-AC_R4405        AC Raio 2 - unidimensional regra 1436194405, coleta por linha
+AC_R4405    ==>   AC Raio 2 - unidimensional regra 1436194405, coleta por linha
 
 AC_R8345        AC Raio 1 - bidimensional regra 1453938345
 
