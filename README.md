@@ -19,14 +19,14 @@ Abaixo temos os nomes dos programas com uma breve descrição de cada um, a cole
 
 Programa	Descrição do AC e Tipo de Coleta
 
-AC_R30	           AC Raio 1 - unidimensional regra 30 - coleta por linha
-AC_R4405	    AC Raio 2 - unidimensional regra 1436194405, coleta por linha
-AC_R8345	    AC Raio 1 - bidimensional regra 1453938345, coleta por plano
-AC_R30col	    AC Raio 1 - unidimensional regra 30, coleta coluna central
-AC_R4405col 	    AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
-AC_R8345col 	    AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
-AC90_150H	    AC 90/150 Híbrido coleta por linha
-AC90_150Hcol	    AC 90/150 Híbrido coleta por coluna central	
+AC_R30	              AC Raio 1 - unidimensional regra 30 - coleta por linha
+AC_R4405	       AC Raio 2 - unidimensional regra 1436194405, coleta por linha
+AC_R8345	       AC Raio 1 - bidimensional regra 1453938345, coleta por plano
+AC_R30col	       AC Raio 1 - unidimensional regra 30, coleta coluna central
+AC_R4405col 	       AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
+AC_R8345col 	       AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
+AC90_150H	       AC 90/150 Híbrido coleta por linha
+AC90_150Hcol         AC 90/150 Híbrido coleta por coluna central	
 
 Programas para coleta de 50% (1/2) dos bits
 
@@ -34,23 +34,29 @@ AC_R8345_50	AC Raio 1 – bidimensional regra 1453938345, coleta 50%.
 
 Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de posição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
 
-AC_R8345_50v1	AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
-AC_R8345_50v2	AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
-AC_R8345_50v3	AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
-AC_R8345_50v4	AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
+AC_R8345_50v1	       AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
+AC_R8345_50v2	       AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
+AC_R8345_50v3	       AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
+AC_R8345_50v4	       AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
 
 Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
 
-AC_R8345_50v1D		AC Raio 1 – bidimensional regra 1453938345
-AC_R8345_50v2D		AC Raio 1 – bidimensional regra 1453938345.
-AC_R8345_50v3D		AC Raio 1 – bidimensional regra 1453938345.
-AC_R8345_50v4D	  AC Raio 1 – bidimensional regra 1453938345
+AC_R8345_50v1D       AC Raio 1 – bidimensional regra 1453938345
+AC_R8345_50v2D	AC Raio 1 – bidimensional regra 1453938345.
+AC_R8345_50v3D	AC Raio 1 – bidimensional regra 1453938345.
+AC_R8345_50v4D	AC Raio 1 – bidimensional regra 1453938345
 
 Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus valores adequados para cada tipo de AC. Abaixo segue informações necessárias:
 
-Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos. As variáveis width e height devem ficar conforme Tabela 1. 
+Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos. As variáveis a seguir, devem ficar com os seguintes valores, conforme Tabela 1.
 
 Tabela 1
+
+width  height
+32     31.250
+64     15.625
+126     7.813
+
 
 A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
