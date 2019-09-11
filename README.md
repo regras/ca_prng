@@ -53,8 +53,11 @@ Para execução dos programas unidimensionais é preciso setar as variáveis rul
 Tabela 1
 
 width  height
+
 32     31.250
+
 64     15.625
+
 126     7.813
 
 
