@@ -7,24 +7,29 @@ Um AC consiste de um conjunto de células que podem ser organizadas em um espaç
 Mais detalhes sobre esse assunto, podem ser encontrados na dissertação de mestrado “AVALIAÇÃO DE GERADORES DE NÚMEROS PSEUDOALEATÓRIOS BASEADOS EM AUTÔMATOS CELULARES NÃO ELEMENTARES”  de Sílvia R. L. Magossi, disponível no repositório digital da Unicamp em http://repositorio.unicamp.br/
 
 Objetivo
-Foram utilizados programas desenvolvidos em Python (versão 2.7.12 SO Ubuntu 16.04.3 LTS VM) durante o trabalho de mestrado, a fim de produzir sequências binárias aleatórias a partir de ACs. Os ACs e a produção das sequências binárias, podem ser empregados como um Gerador de Números Aleatórios.
+
+Foram utilizados programas desenvolvidos em Python (versão 2.7.12 SO Ubuntu 16.04.3 LTS VM) durante o trabalho de mestrado, a fim de produzir sequências binárias aleatórias a partir de ACs. Os ACs e a produção das sequências binárias, podem ser empregadas como um Gerador de Números Aleatórios.
 
 Uso
-Os programas devem ser copiados/salvos em pastas do seu sistema operacional. Eles produzem dados que são armazenados em arquivos binários (cujo nome do arquivo se encontra no próprio código), são necessários 12.500.000 bytes de espaço, para cada programa a ser executado, para armazenar 108 bits, e todas as informações e parâmetros necessários para executar, estão embutidas no código dos programas, uma explanação é feita nas linhas a seguir.
-Para executar os programas, é necessário digitar na linha de comando (Linux): python nome_do_programa.py. Após, ele executa até produzir 108 bits, armazena em arquivo, e termina o processamento.
 
-Abaixo temos os nomes dos programas com uma breve descrição de cada um.
+Os programas devem ser copiados/salvos em pastas do seu sistema operacional. Eles produzem dados que são armazenados em arquivos binários (cujo nome do arquivo se encontra no próprio código), são necessários 12.500.000 bytes de espaço em disco, para cada programa executado, no final ele armazena 10^8 bits, e todas as informações e parâmetros necessários para executar, estão embutidas no código dos programas, uma explanação é feita nas linhas a seguir.
+Para executar os programas, é necessário digitar na linha de comando (Linux): python nome_do_programa.py. Após, o programa é executado até produzir 10^8 bits, armazena em arquivo esses bits, e termina o processamento.
+
+Abaixo temos os nomes dos programas com uma breve descrição de cada um, a coleta dos programas a seguir é feita por linha, plano e coluna central.
+
 Programa	Descrição do AC e Tipo de Coleta
-AC_R30	      AC Raio 1 - unidimensional regra 30 - coleta por linha
+
+AC_R30	           AC Raio 1 - unidimensional regra 30 - coleta por linha
 AC_R4405	    AC Raio 2 - unidimensional regra 1436194405, coleta por linha
 AC_R8345	    AC Raio 1 - bidimensional regra 1453938345, coleta por plano
 AC_R30col	    AC Raio 1 - unidimensional regra 30, coleta coluna central
-AC_R4405col 	AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
-AC_R8345col 	AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
+AC_R4405col 	    AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
+AC_R8345col 	    AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
 AC90_150H	    AC 90/150 Híbrido coleta por linha
-AC90_150Hcol	AC 90/150 Híbrido coleta por coluna central	
+AC90_150Hcol	    AC 90/150 Híbrido coleta por coluna central	
 
-Programas para coleta de 50% dos bits
+Programas para coleta de 50% (1/2) dos bits
+
 AC_R8345_50	AC Raio 1 – bidimensional regra 1453938345, coleta 50%. 
 
 Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de posição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
@@ -44,10 +49,12 @@ AC_R8345_50v4D	  AC Raio 1 – bidimensional regra 1453938345
 Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus valores adequados para cada tipo de AC. Abaixo segue informações necessárias:
 
 Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos. As variáveis width e height devem ficar conforme Tabela 1. 
+
 Tabela 1
 
 A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
+
 Tabela 2
 
 No caso da variável rulenum consideramos o número 1453938345 definido como número da regra bidimensional, para dorandom atribuímos o número um, que conduz o programa a iniciar o primeiro plano com os bits posicionados de forma aleatória, utilizando para isso a função randint( ) e cycles = 100, que define o número de iterações para produzir 108 bits.
