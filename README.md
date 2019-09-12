@@ -68,9 +68,10 @@ A variável random = 1, para que o programa construa um vetor com bits aleatóri
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
 
 Tabela 2
--------------------------------
-rows  |  columns | layersnum
--------------------------------
+------------------------------
+ rows  |  columns | layersnum
+------------------------------
+------------------------------
 4     |     8    |  31.250
 8     |    16    |  15.525
 8     |     8    |  15.625
