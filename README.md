@@ -32,15 +32,14 @@ Programas para coleta de 50% (1/2) dos bits
 
 AC_R8345_50	AC Raio 1 – bidimensional regra 1453938345, coleta 50%. 
 
-Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de posição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
+Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de psição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
 
-AC_R8345_50v1	       AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
-
-AC_R8345_50v2	       AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
-
-AC_R8345_50v3	       AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
-
-AC_R8345_50v4	       AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
+Programa       |   Descrição do AC e Tipo de Coleta
+---------------|--------------------------------------------------------------------
+AC_R8345_50v1	 | AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
+AC_R8345_50v2  | AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
+AC_R8345_50v3  | AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
+AC_R8345_50v4	 | AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
 
 
 Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
