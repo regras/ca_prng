@@ -16,9 +16,8 @@ Para executar os programas, é necessário digitar na linha de comando (Linux): 
 
 Abaixo temos os nomes dos programas com uma breve descrição de cada um, a coleta dos programas a seguir é feita por linha, plano e coluna central.
 
-Programa   |	Descrição do AC e Tipo de Coleta
------------|--------------------------------------------------------------------
-
+Programa    |	Descrição do AC e Tipo de Coleta
+------------|-------------------------------------------------------------------
 AC_R30      |  AC Raio 1 - unidimensional regra 30 - coleta por linha
 AC_R4405    |  AC Raio 2 - unidimensional regra 1436194405, coleta por linha
 AC_R8345    |  AC Raio 1 - bidimensional regra 1453938345, coleta por plano
