@@ -59,7 +59,7 @@ Para execução dos programas unidimensionais é preciso setar as variáveis rul
 Tabela 1
 ----------------
 width |  height
-------|---------
+:----:|---------
 32    |  31.250
 64    |  15.624
 126   |   7.813
@@ -70,7 +70,7 @@ Para os programas bidimensionais as variáveis rows, columns e layersnum devem s
 Tabela 2
 -----------------------------
 rows  | columns  | layersnum
-------|----------|-----------
+:----:|:--------:|-----------
 4     |     8    |  31.250
 8     |    16    |  15.525
 8     |     8    |  15.625
