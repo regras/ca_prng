@@ -69,14 +69,12 @@ Para os programas bidimensionais as variáveis rows, columns e layersnum devem s
 
 Tabela 2
 -----------------------------------
-  Rows  | Columns  | Layersnum
-
------------------------------------
-  4     |     8    |  31.250
-  8     |    16    |  15.525
-  8     |     8    |  15.625
-  4     |    32    |   7.813
-  8     |    16    |   7.813
+Rows  | Columns  | Layersnum
+4     |     8    |  31.250
+8     |    16    |  15.525
+8     |     8    |  15.625
+4     |    32    |   7.813
+8     |    16    |   7.813
 
 No caso da variável rulenum consideramos o número 1453938345 definido como número da regra bidimensional, para dorandom atribuímos o número um, que conduz o programa a iniciar o primeiro plano com os bits posicionados de forma aleatória, utilizando para isso a função randint( ) e cycles = 100, que define o número de iterações para produzir 108 bits.
 
