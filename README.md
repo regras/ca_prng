@@ -88,7 +88,7 @@ Notamos que apenas a variável height é que se alterou para 1.000.000, valor ne
 Tabela 3
 ---------------------
 width    |  height
----------|-----------
+:-------:|-----------
 32       | 1.000.000
 64       | 1.000.000
 128      | 1.000.000
@@ -98,7 +98,7 @@ Ao observarmos a Tabela 4, notamos que também houve alterações na variável l
 Tabela 4
 -----------------------------
 rows   | columns | layersnum
--------|---------|-----------
+:-----:|:-------:|-----------
 4      |   8     | 1.000.000
 4      |  16     | 1.000.000
 8      |   8     | 1.000.000
@@ -120,7 +120,7 @@ Os programas devem inicializar as variáveis, rulenum = 1453938345 número da re
 Tabela 5
 ----------------
 rowns | columns
-------|---------:
+:----:|:-------:
 4     |   16
 8     |    8
 4     |   32
@@ -157,7 +157,7 @@ Para a coleta na diagonal, os programas devem inicializar as variáveis, rulenum
 Tabela 6
 ----------------
 rowns | columns
-------|---------:
+:----:|:-------:
 4     |   16
 8     |    8
 4     |   32
