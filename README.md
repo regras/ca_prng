@@ -52,25 +52,38 @@ Para execução dos programas unidimensionais é preciso setar as variáveis rul
 
 Tabela 1
 
-width         height
-32            31.250
-64            15.625
-126            7.813
-
+width     32      64     126
+height  31.250  15.624  7.813  
 
 A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
 
 Tabela 2
 
+rows             4        8        8        4      8                 
+columns          8       16        8       32     16
+layersnum     31.250   15.625   15.625   7.813   7.813 
+
 No caso da variável rulenum consideramos o número 1453938345 definido como número da regra bidimensional, para dorandom atribuímos o número um, que conduz o programa a iniciar o primeiro plano com os bits posicionados de forma aleatória, utilizando para isso a função randint( ) e cycles = 100, que define o número de iterações para produzir 108 bits.
-Os números apresentados nas Tabelas 1 e 2, deve-se ao fato que a escolha dos tamanhos dos ACs (width, rows e columns), serem compatíveis com as arquiteturas de processadores mais comuns, e (height e layersnum) são para gerar 106 bits, esses bits são armazenados em arquivo (nome que pode ser encontrado dentro do próprio código), ao final de 100 iterações, 108 milhões de bits produzidos estarão gravados.  
+
+Os números apresentados nas Tabelas 1 e 2, deve-se ao fato que a escolha dos tamanhos dos ACs (width, rows e columns), serem compatíveis com as arquiteturas de processadores mais comuns, e (height e layersnum) são para gerar 106 bits, esses bits são armazenados em arquivo (nome que pode ser encontrado dentro do próprio código), ao final de 100 iterações, 108 milhões de bits produzidos estarão gravados.
+
 Para os programas onde a coleta é feita somente a partir da (célula) coluna central, as variáveis devem ficar como nas Tabelas 3, caso dos programas unidimensionais e Tabela 4 para os programas bidimensionais.
-Notamos que apenas a variável height é que se alterou para 1.000.000, valor necessário para coletar 106 bits, apenas a célula central é que se fará uso, isto a partir de cada atualização do AC.
+
+Notamos que apenas a variável height é que se alterou para 1.000.000, valor necessário para coletar 10^6 bits, apenas a célula central é que se fará uso, isto a partir de cada atualização do AC.
+
 Tabela 3
 
+width   32           64            128
+height  1.000.000    1.000.000     1.000.000
+
 Ao observarmos a Tabela 4, notamos que também houve alterações na variável layersnum, nos diversos tamanhos,  com o mesmo propósito para realizarmos a coleta de 106 bits, da posição central a partir de cada plano.  
+
 Tabela 4
+
+rows          4              4            8          4          8
+columns       8             16            8         32         16
+layersnum   1.000.000   1.000.000   1.000.000   1.000.000   1.000.000
 
 Para realizarmos a coleta de 25% ou 50%, optamos pelo bidimensional pelo fato que, ao efetuarmos a coleta a partir de diversas colunas do AC unidimensional, entregamos muitas informações a um observador, e assim, destruímos todas as possibilidades de segurança.  
 Para a execução da coleta de ½ e ¼ dos bits, consideramos a mesma semente, para as 100 iterações,  e 4 tamanhos foram analisados: 4x16, 8x8, 4x32 e 8x16.
