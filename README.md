@@ -44,13 +44,12 @@ AC_R8345_50v4	 | AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2
 
 Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
 
-AC_R8345_50v1D       AC Raio 1 – bidimensional regra 1453938345
-
-AC_R8345_50v2D	AC Raio 1 – bidimensional regra 1453938345
-
-AC_R8345_50v3D	AC Raio 1 – bidimensional regra 1453938345
-
-AC_R8345_50v4D	AC Raio 1 – bidimensional regra 1453938345
+Programa       |   Descrição do AC e Tipo de Coleta
+---------------|--------------------------------------------
+AC_R8345_50v1D | AC Raio 1 – bidimensional regra 1453938345
+AC_R8345_50v2D | AC Raio 1 – bidimensional regra 1453938345
+AC_R8345_50v3D | AC Raio 1 – bidimensional regra 1453938345
+AC_R8345_50v4D | AC Raio 1 – bidimensional regra 1453938345
 
 
 Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus valores adequados para cada tipo de AC. Abaixo segue informações necessárias:
@@ -58,10 +57,12 @@ Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus val
 Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos. As variáveis a seguir, devem ficar com os seguintes valores, conforme Tabela 1.
 
 Tabela 1
-
-width     32      64     126
-
-height  31.250  15.624  7.813  
+----------------
+width |  height
+------|---------
+32    |  31.250
+64    |  15.624
+126   |   7.813
 
 A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
