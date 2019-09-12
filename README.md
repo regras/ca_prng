@@ -120,7 +120,7 @@ Os programas devem inicializar as variáveis, rulenum = 1453938345 número da re
 Tabela 5
 ----------------
 rowns | columns
-------|---------
+------|---------:
 4     |   16
 8     |    8
 4     |   32
@@ -157,7 +157,7 @@ Para a coleta na diagonal, os programas devem inicializar as variáveis, rulenum
 Tabela 6
 ----------------
 rowns | columns
-------|---------
+------|---------:
 4     |   16
 8     |    8
 4     |   32
