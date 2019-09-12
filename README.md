@@ -68,8 +68,9 @@ A variável random = 1, para que o programa construa um vetor com bits aleatóri
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
 
 Tabela 2
------------------------------------
+
 Rows  | Columns  | Layersnum
+-----------------------------------
 4     |     8    |  31.250
 8     |    16    |  15.525
 8     |     8    |  15.625
@@ -86,10 +87,11 @@ Notamos que apenas a variável height é que se alterou para 1.000.000, valor ne
 
 Tabela 3
 
-width   32           64            128
-
-height  1.000.000    1.000.000     1.000.000
-
+width    |  height
+----------------------
+32       | 1.000.000
+64       | 1.000.000
+128      | 1.000.000
 
 Ao observarmos a Tabela 4, notamos que também houve alterações na variável layersnum, nos diversos tamanhos,  com o mesmo propósito para realizarmos a coleta de 106 bits, da posição central a partir de cada plano.  
 
