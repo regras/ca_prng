@@ -42,16 +42,24 @@ AC_R8345_50	AC Raio 1 – bidimensional regra 1453938345, coleta 50%.
 Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de posição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
 
 AC_R8345_50v1	       AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
+
 AC_R8345_50v2	       AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
+
 AC_R8345_50v3	       AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
+
 AC_R8345_50v4	       AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
+
 
 Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
 
 AC_R8345_50v1D       AC Raio 1 – bidimensional regra 1453938345
-AC_R8345_50v2D	AC Raio 1 – bidimensional regra 1453938345.
-AC_R8345_50v3D	AC Raio 1 – bidimensional regra 1453938345.
+
+AC_R8345_50v2D	AC Raio 1 – bidimensional regra 1453938345
+
+AC_R8345_50v3D	AC Raio 1 – bidimensional regra 1453938345
+
 AC_R8345_50v4D	AC Raio 1 – bidimensional regra 1453938345
+
 
 Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus valores adequados para cada tipo de AC. Abaixo segue informações necessárias:
 
@@ -68,9 +76,12 @@ Para os programas bidimensionais as variáveis rows, columns e layersnum devem s
 
 Tabela 2
 
-rows             4        8        8        4      8                 
+rows             4        8        8        4      8  
+
 columns          8       16        8       32     16
-layersnum     31.250   15.625   15.625   7.813   7.813 
+
+layersnum     31.250   15.625   15.625   7.813   7.813
+
 
 No caso da variável rulenum consideramos o número 1453938345 definido como número da regra bidimensional, para dorandom atribuímos o número um, que conduz o programa a iniciar o primeiro plano com os bits posicionados de forma aleatória, utilizando para isso a função randint( ) e cycles = 100, que define o número de iterações para produzir 108 bits.
 
