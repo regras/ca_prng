@@ -19,14 +19,14 @@ Abaixo temos os nomes dos programas com uma breve descrição de cada um, a cole
 
 Programa	Descrição do AC e Tipo de Coleta
 
-AC_R30	              AC Raio 1 - unidimensional regra 30 - coleta por linha
+AC_R30	         AC Raio 1 - unidimensional regra 30 - coleta por linha
 AC_R4405	       AC Raio 2 - unidimensional regra 1436194405, coleta por linha
 AC_R8345	       AC Raio 1 - bidimensional regra 1453938345, coleta por plano
 AC_R30col	       AC Raio 1 - unidimensional regra 30, coleta coluna central
-AC_R4405col 	       AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
-AC_R8345col 	       AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
+AC_R4405col 	   AC Raio 2 - unidimensional regra 1436194405, coleta coluna central    
+AC_R8345col 	   AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central  
 AC90_150H	       AC 90/150 Híbrido coleta por linha
-AC90_150Hcol         AC 90/150 Híbrido coleta por coluna central	
+AC90_150Hcol     AC 90/150 Híbrido coleta por coluna central	
 
 Programas para coleta de 50% (1/2) dos bits
 
