@@ -133,7 +133,8 @@ rowns | columns
 
 Uma outra mudança se dá nas linhas do código do programa referente a coleta de 50% dos bits, abaixo um exemplo parcial do código:
 
-   ```for coluna in range(0,columns,1):
+   ```
+       for coluna in range(0,columns,1):
           for linha in range(0,rows,2):        	
               vetor[kl] = data[linha][coluna]       	
            	  kl = kl + 1
@@ -149,7 +150,8 @@ Na coleta de ¼ dos bits do plano, deve-se alterar a variável prop para 4, e as
 
 Todas as alterações de linha e coluna e as posições dos laços deverão ser feitas para a coleta de 25%. Os código para a coleta de ¼ dos bits são os mesmos de ½ , e destacamos que não foram realizadas coletas na diagonal para ¼ dos bits.
   
-  ```for coluna in range(0,columns,1):            
+  ```
+     for coluna in range(0,columns,1):            
         for linha in range(0,rows,4):
            vetor[kl] = data[linha][coluna]             	          
            kl = kl + 1
@@ -177,7 +179,7 @@ rowns | columns
 
 Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diagonal, as quais fazem o processamento de atribuir a um vetor os bits, observa-se que as alterações devem ser efetuadas na inicialização dos valores de linha e coluna e durante a evolução dos dois laços while. 
 
-           ```linha = 0
+      ```linha = 0
         	coluna = 0          	
         	while coluna < columns: 
            	while linha < rows:         	
