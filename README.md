@@ -136,7 +136,7 @@ Uma outra mudança se dá nas linhas do código do programa referente a coleta d
    ```for coluna in range(0,columns,1):
           for linha in range(0,rows,2):        	
               vetor[kl] = data[linha][coluna]       	
-           	kl = kl + 1
+           	  kl = kl + 1
    ```
 
 Observar a variação da linha e da coluna , e a posição dos laços, em cada uma das 4 versões dos programas, essas mudanças são necessárias e deverão ser efetuadas para o acesso das células por diferentes formas.
@@ -150,9 +150,9 @@ Na coleta de ¼ dos bits do plano, deve-se alterar a variável prop para 4, e as
 Todas as alterações de linha e coluna e as posições dos laços deverão ser feitas para a coleta de 25%. Os código para a coleta de ¼ dos bits são os mesmos de ½ , e destacamos que não foram realizadas coletas na diagonal para ¼ dos bits.
   
   ```for coluna in range(0,columns,1):            
-     for linha in range(0,rows,4):
-     vetor[kl] = data[linha][coluna]             	          
-     kl = kl + 1
+        for linha in range(0,rows,4):
+           vetor[kl] = data[linha][coluna]             	          
+           kl = kl + 1
    ```
  
 Programas para coleta 50% dos bits na Diagonal
