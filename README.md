@@ -54,7 +54,11 @@ AC_R8345_50v4D | AC Raio 1 – bidimensional regra 1453938345
 
 Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus valores adequados para cada tipo de AC. Abaixo segue informações necessárias:
 
-Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos. As variáveis a seguir, devem ficar com os seguintes valores, conforme Tabela 1.
+Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos.
+
+A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
+
+As variáveis a seguir, devem ficar com os seguintes valores, conforme Tabela 1.
 
 Tabela 1
 ----------------
@@ -64,7 +68,6 @@ width |  height
 64    |  15.624
 126   |   7.813
 
-A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 Para os programas bidimensionais as variáveis rows, columns e layersnum devem ser atribuídos valores como na Tabela 2.
 
 Tabela 2
