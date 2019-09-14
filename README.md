@@ -23,7 +23,7 @@ AC_R4405    |  AC Raio 2 - unidimensional regra 1436194405, coleta por linha
 AC_R8345    |  AC Raio 1 - bidimensional regra 1453938345, coleta por plano
 AC_R30col   |  AC Raio 1 - unidimensional regra 30, coleta coluna central
 AC_R4405col |  AC Raio 2 - unidimensional regra 1436194405, coleta coluna central
-AC_R8345col |  AC Raio 1 - bidimensional regra 1453938345, ccoleta coluna central
+AC_R8345col |  AC Raio 1 - bidimensional regra 1453938345, coleta coluna central
 AC90_150H   |  AC 90/150 Híbrido coleta por linha
 AC90_150Hcol|  AC 90/150 Híbrido coleta por coluna central
 
@@ -32,7 +32,7 @@ Programas para coleta de 50% (1/2) dos bits
 
 AC_R8345_50	AC Raio 1 – bidimensional regra 1453938345, coleta 50%. 
 
-Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de psição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
+Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando que é possível acessar esses bits de várias formas, alteramos os laços de posição e a variação de um dos laço, essa alteração acontece saltando duas linhas ou duas colunas.
 
 Programa       |   Descrição do AC e Tipo de Coleta
 ---------------|--------------------------------------------------------------------
