@@ -58,7 +58,7 @@ Para execução dos programas unidimensionais é preciso setar as variáveis rul
 
 A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
 
-As variáveis a seguir, devem ficar com os seguintes valores, conforme Tabela 1.
+As variáveis a seguir, devem ficar com os valores, conforme Tabela 1.
 
 Tabela 1
 ----------------
