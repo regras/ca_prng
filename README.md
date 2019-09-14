@@ -128,10 +128,12 @@ rowns | columns
 
 
 Uma outra mudança se dá nas linhas do código do programa referente a coleta de 50% dos bits, abaixo um exemplo parcial do código:
+
        for coluna in range(0,columns,1):
           for linha in range(0,rows,2):        	
               vetor[kl] = data[linha][coluna]       	
            	kl = kl + 1
+
 Observar a variação da linha e da coluna , e a posição dos laços, em cada uma das 4 versões dos programas, essas mudanças são necessárias e deverão ser efetuadas para o acesso das células por diferentes formas.
 Programas para coleta de 25% dos bits
 AC_R8345_25	AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
