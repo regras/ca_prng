@@ -136,8 +136,8 @@ Uma outra mudança se dá nas linhas do código do programa referente a coleta d
    ```
        for coluna in range(0,columns,1):
           for linha in range(0,rows,2):        	
-              vetor[kl] = data[linha][coluna]       	
-           	  kl = kl + 1
+             vetor[kl] = data[linha][coluna]       	
+             kl = kl + 1
    ```
 
 Observar a variação da linha e da coluna , e a posição dos laços, em cada uma das 4 versões dos programas, essas mudanças são necessárias e deverão ser efetuadas para o acesso das células por diferentes formas.
@@ -179,7 +179,8 @@ rowns | columns
 
 Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diagonal, as quais fazem o processamento de atribuir a um vetor os bits, observa-se que as alterações devem ser efetuadas na inicialização dos valores de linha e coluna e durante a evolução dos dois laços while. 
 
-      ```linha = 0
+      ```
+         linha = 0
         	coluna = 0          	
         	while coluna < columns: 
            	while linha < rows:         	
@@ -191,7 +192,7 @@ Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diag
               	linha = 0              	
            	else:
               	linha = 1
-           ```
+       ```
               
 
 
