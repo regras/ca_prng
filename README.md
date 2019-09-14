@@ -147,12 +147,12 @@ AC_R8345_25	AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
 Na coleta de ¼ dos bits do plano, deve-se alterar a variável prop para 4, e as linhas de código onde ocorrem as alterações são apresentadas abaixo, nesse caso a variação da linha passa a ser de 4 em 4. 
 
 Todas as alterações de linha e coluna e as posições dos laços deverão ser feitas para a coleta de 25%. Os código para a coleta de ¼ dos bits são os mesmos de ½ , e destacamos que não foram realizadas coletas na diagonal para ¼ dos bits.
-  ```
+  
   for coluna in range(0,columns,1):            
      for linha in range(0,rows,4):
-   	       vetor[kl] = data[linha][coluna]             	          
-              kl = kl + 1
-   ```
+   	    vetor[kl] = data[linha][coluna]             	          
+           kl = kl + 1
+   
  
 Programas para coleta 50% dos bits na Diagonal
 
@@ -176,7 +176,7 @@ rowns | columns
 
 Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diagonal, as quais fazem o processamento de atribuir a um vetor os bits, observa-se que as alterações devem ser efetuadas na inicialização dos valores de linha e coluna e durante a evolução dos dois laços while. 
 
-           ```linha = 0
+              linha = 0
         	coluna = 0          	
         	while coluna < columns: 
            	while linha < rows:         	
@@ -188,6 +188,6 @@ Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diag
               	linha = 0              	
            	else:
               	linha = 1
-              ```
+              
 
 
