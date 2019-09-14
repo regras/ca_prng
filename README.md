@@ -105,7 +105,8 @@ rows   | columns | layersnum
 4      |  32     | 1.000.000
 8      |  16     | 1.000.000
 
-Para realizarmos a coleta de 25% ou 50%, optamos pelo bidimensional pelo fato que, ao efetuarmos a coleta a partir de diversas colunas do AC unidimensional, entregamos muitas informações a um observador, e assim, destruímos todas as possibilidades de segurança.  
+Para realizarmos a coleta de 25% ou 50%, optamos pelo bidimensional pelo fato que, ao efetuarmos a coleta a partir de diversas colunas do AC unidimensional, entregamos muitas informações a um atacante, e assim, destruímos todas as possibilidades de segurança.
+
 Para a execução da coleta de ½ e ¼ dos bits, consideramos a mesma semente, para as 100 iterações,  e 4 tamanhos foram analisados: 4x16, 8x8, 4x32 e 8x16.
 
 Programa       |   Descrição do AC e Tipo de Coleta
@@ -135,9 +136,13 @@ Uma outra mudança se dá nas linhas do código do programa referente a coleta d
            	kl = kl + 1
 
 Observar a variação da linha e da coluna , e a posição dos laços, em cada uma das 4 versões dos programas, essas mudanças são necessárias e deverão ser efetuadas para o acesso das células por diferentes formas.
+
 Programas para coleta de 25% dos bits
+
 AC_R8345_25	AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
+
 Na coleta de ¼ dos bits do plano, deve-se alterar a variável prop para 4, e as linhas de código onde ocorrem as alterações são apresentadas abaixo, nesse caso a variação da linha passa a ser de 4 em 4. 
+
 Todas as alterações de linha e coluna e as posições dos laços deverão ser feitas para a coleta de 25%. Os código para a coleta de ¼ dos bits são os mesmos de ½ , e destacamos que não foram realizadas coletas na diagonal para ¼ dos bits.
   
   for coluna in range(0,columns,1):            
@@ -154,7 +159,7 @@ AC_R8345_50v2D | AC Raio 1 – bidimensional regra 1453938345
 AC_R8345_50v3D | AC Raio 1 – bidimensional regra 1453938345
 AC_R8345_50v4D | AC Raio 1 – bidimensional regra 1453938345
 
-Para a coleta na diagonal, os programas devem inicializar as variáveis, rulenum = 1453938345, prop = 2 valor que define ½ dos bits a serem coletados, qteCol = (rows * columns)/ prop  que indica quantos valores serão coletados em cada plano, e a variavél layersnum = 1000000/qteCol que define o número de iterações necessárias para alcançarmos 106 bits. Os valores para as variáveis rows e columns segue a Tabela 6:
+Para a coleta na diagonal, os programas devem inicializar as variáveis, rulenum = 1453938345, prop = 2 valor que define ½ dos bits a serem coletados, qteCol = (rows * columns)/ prop, que indica quantos valores serão coletados em cada plano, e a variavél layersnum = 1000000/qteCol que define o número de iterações necessárias para alcançarmos 106 bits. Os valores para as variáveis rows e columns segue a Tabela 6:
 
 Tabela 6
 ----------------
@@ -166,15 +171,18 @@ rowns | columns
 8     |   16
 
 Deve-se notar nas linhas de códigos a seguir como é realizada a coleta na diagonal, as quais fazem o processamento de atribuir a um vetor os bits, observa-se que as alterações devem ser efetuadas na inicialização dos valores de linha e coluna e durante a evolução dos dois laços while. 
-linha = 0
+
+              linha = 0
         	coluna = 0          	
         	while coluna < columns: 
            	while linha < rows:         	
-              		vetor[kl] = data[linha][coluna]  	
-              		linha += 2
+              	vetor[kl] = data[linha][coluna]  	
+              	linha += 2
               	kl = kl + 1
-           	coluna += 1
+           	       coluna += 1
            	if (coluna % 2):
-              		linha = 0              	
+              	linha = 0              	
            	else:
-              		linha = 1              
+              	linha = 1
+
+
