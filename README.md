@@ -108,9 +108,9 @@ rows   | columns | layersnum
 4      |  32     | 1.000.000
 8      |  16     | 1.000.000
 
-Para realizarmos a coleta de 25% ou 50%, optamos pelo bidimensional pelo fato que, ao efetuarmos a coleta a partir de diversas colunas do AC unidimensional, entregamos muitas informações a um atacante, e assim, destruímos todas as possibilidades de segurança.
+Para realizarmos a coleta de 25% ou 50%, optamos pelo bidimensional, pois, ao efetuarmos a coleta a partir de diversas colunas do AC unidimensional, entregamos muitas informações a um atacante, e assim, destruímos todas as possibilidades de segurança.
 
-Para a execução da coleta de ½ e ¼ dos bits, consideramos a mesma semente, para as 100 iterações, e 4 tamanhos foram analisados: 4x16, 8x8, 4x32 e 8x16.
+Para a execução da coleta de ½ dos bits, consideramos a mesma semente, para as 100 iterações, e 4 tamanhos foram analisados: 4x16, 8x8, 4x32 e 8x16. As sementes se encontram no código (definidas na estrutura data para os 4 tamanhos citados), e devem ser escolhidas conforme o tamanho do AC definido nas variáveis rowns e columns
 
 Programa       |   Descrição do AC e Tipo de Coleta
 ---------------|-------------------------------------------------------------------
