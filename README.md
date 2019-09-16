@@ -144,7 +144,9 @@ Observar a variação da linha e da coluna , e a posição dos laços, em cada u
 
 Programa para coleta de 25% dos bits
 
-AC_R8345_25	AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
+Programa       |   Descrição do AC e Tipo de Coleta
+---------------|---------------------------------------------------
+AC_R8345_25	   | AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
 
 Para a coleta de ¼ dos bits existem várias formas, com as mesmas mudanças realizadas na coleta feita com 50% do plano, no entanto considermos em nossos experimentos a coleta que apresentou maior dificuldade para um atacante. Para realizarmos a coleta de 25% do bits, consideramos 50% de um plano e descarte do próximo. 
 
