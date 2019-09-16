@@ -14,7 +14,7 @@ Uso
 Os programas devem ser copiados/salvos em pastas do seu sistema operacional. Eles produzem dados que são armazenados em arquivos binários (cujo nome do arquivo se encontra no próprio código), são necessários 12.500.000 bytes de espaço em disco, para cada programa executado, no final ele armazena 10^8 bits, e todas as informações e parâmetros necessários para executar, estão embutidas no código dos programas, uma explanação é feita nas linhas a seguir.
 Para executar os programas, é necessário digitar na linha de comando (Linux): python nome_do_programa.py. Após, o programa é executado até produzir 10^8 bits, armazena em arquivo esses bits, e termina o processamento.
 
-Abaixo temos os nomes dos programas com uma breve descrição de cada um, a coleta dos programas a seguir é feita por linha, plano e coluna central.
+Abaixo temos os nomes dos programas com uma breve descrição de cada um, a coleta dos bits realizadas pelos programas a seguir, é feita por linha, plano e coluna central.
 
 Programa    |	Descrição do AC e Tipo de Coleta
 ------------|-------------------------------------------------------------------
@@ -42,7 +42,7 @@ AC_R8345_50v3  | AC Raio 1 – bidimensional regra 1453938345, variação linha1
 AC_R8345_50v4	| AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
 
 
-Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
+Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou na posição [0,1], ou pode ser no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
 
 Programa       |   Descrição do AC e Tipo de Coleta
 ---------------|--------------------------------------------
@@ -56,7 +56,7 @@ Deve-se observar alguns parâmetros (variáveis) que precisam estar com seus val
 
 Para execução dos programas unidimensionais é preciso setar as variáveis rule = 30 programa R_30, rule = 14436194405 para o programa R_4405, e rule = 90 e 150 para o programa AC90_150H, esses números de regras foram definidos por apresentarem comportamentos complexos.
 
-A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ).
+A variável random = 1, para que o programa construa um vetor com bits aleatórios (primeira linha do AC), a partir da função randint( ), no caso do AC híbrido ocorre de forma diferente, a evolução do AC ocorre a parttir de um vetor chamado de vetor de regras.
 
 As variáveis a seguir, devem ficar com os valores, conforme Tabela 1.
 
@@ -84,7 +84,7 @@ No caso da variável rulenum consideramos o número 1453938345 definido como nú
 
 Os números apresentados nas Tabelas 1 e 2, deve-se ao fato que a escolha dos tamanhos dos ACs (width, rows e columns), serem compatíveis com as arquiteturas de processadores mais comuns, e (height e layersnum) são para gerar 10^6 bits, esses bits são armazenados em arquivo (nome que pode ser encontrado dentro do próprio código), ao final de 100 iterações, 10^8 milhões de bits produzidos estarão gravados.
 
-Para os programas onde a coleta é feita somente a partir da (célula) coluna central, as variáveis devem ficar como nas Tabelas 3, caso dos programas unidimensionais e Tabela 4 para os programas bidimensionais.
+Para os programas onde a coleta é feita somente a partir da (célula) coluna central, as variáveis devem ficar como na Tabela 3, caso dos programas unidimensionais e Tabela 4 para os programas bidimensionais.
 
 Notamos que apenas a variável height é que se alterou para 1.000.000, valor necessário para coletar 10^6 bits, apenas a célula central é que se fará uso, isto a partir de cada atualização do AC.
 
