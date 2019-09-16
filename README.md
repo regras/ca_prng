@@ -36,10 +36,10 @@ Foram criadas 4 versões para coleta de ½ dos bits de um plano, considerando qu
 
 Programa       |   Descrição do AC e Tipo de Coleta
 ---------------|--------------------------------------------------------------------
-AC_R8345_50v1	 | AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
+AC_R8345_50v1	| AC Raio 1 – bidimensional regra 1453938345, variação coluna1linha2
 AC_R8345_50v2  | AC Raio 1 – bidimensional regra 1453938345, variação linha2coluna1
 AC_R8345_50v3  | AC Raio 1 – bidimensional regra 1453938345, variação linha1coluna2
-AC_R8345_50v4	 | AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
+AC_R8345_50v4	| AC Raio 1 – bidimensional regra 1453938345, variaçao coluna2linha1
 
 
 Além das versões acima, existem mais 4 versões para a coleta na diagonal. Essas coletas se preocupam com o eixo, x e y , ou seja, a coleta pode ser no sentido horizontal, começando na posição [0,0] ou posição [0,1], ou no sentido vertical, começando na posição [0,0] ou na posição [0,1]. As versões abaixo contemplam cada uma das formas:
@@ -142,21 +142,12 @@ Uma outra mudança se dá nas linhas do código do programa referente a coleta d
 
 Observar a variação da linha e da coluna , e a posição dos laços, em cada uma das 4 versões dos programas, essas mudanças são necessárias e deverão ser efetuadas para o acesso das células por diferentes formas.
 
-Programas para coleta de 25% dos bits
+Programa para coleta de 25% dos bits
 
 AC_R8345_25	AC Raio 1 – bidimensional regra 1453938345, coleta 25%.
 
-Na coleta de ¼ dos bits do plano, deve-se alterar a variável prop para 4, e as linhas de código onde ocorrem as alterações são apresentadas abaixo, nesse caso a variação da linha passa a ser de 4 em 4. 
+Para a coleta de ¼ dos bits existem várias formas, com as mesmas mudanças realizadas na coleta feita com 50% do plano, no entanto considermos em nossos experimentos a coleta que apresentou maior dificuldade para um atacante. Para realizarmos a coleta de 25% do bits, consideramos 50% de um plano e descarte do próximo. 
 
-Todas as alterações de linha e coluna e as posições dos laços deverão ser feitas para a coleta de 25%. Os código para a coleta de ¼ dos bits são os mesmos de ½ , e destacamos que não foram realizadas coletas na diagonal para ¼ dos bits.
-  
-  ```
-     for coluna in range(0,columns,1):            
-        for linha in range(0,rows,4):
-           vetor[kl] = data[linha][coluna]             	          
-           kl = kl + 1
-   ```
- 
 Programas para coleta 50% dos bits na Diagonal
 
 Programa       |   Descrição do AC e Tipo de Coleta
