@@ -12,6 +12,8 @@ Foram utilizados programas desenvolvidos em Python (versão 2.7.12 SO Ubuntu 16.
 Uso
 
 Os programas devem ser copiados/salvos em pastas do seu sistema operacional. Eles produzem dados que são armazenados em arquivos binários (cujo nome do arquivo se encontra no próprio código), são necessários 12.500.000 bytes de espaço em disco (12 MB), para cada programa executado, no final ele armazena 10^8 bits, e todas as informações e parâmetros necessários para executar, estão embutidas no código dos programas, uma explanação é feita nas linhas a seguir.
+
+É preciso lembrar de alterar os nomes dos arquivos gerados de acordo com os tamanhos dos ACs utilizados. Para cada regra unidimensional são gerados 3 arquivos, referentes a 3 tamanhos (Tabela 1), para o bidimensional 4 arquivos, são 4 tamanhos (Tabela 2), isso se repete para gerar os bits, cuja coleta é por coluna, para o AC híbrido também ocorreram coletas por linha e por coluna.  
 Para executar os programas, é necessário digitar na linha de comando (Linux): python nome_do_programa.py. Após, o programa é executado até produzir 10^8 bits, armazena em arquivo esses bits, e termina o processamento.
 
 Abaixo temos os nomes dos programas com uma breve descrição de cada um, a coleta dos bits realizadas pelos programas a seguir, é feita por linha, plano e coluna central.
