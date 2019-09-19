@@ -1,1 +1,83 @@
+#!/usr/bin/env python
+try:
+    arqDestino = open('AC4405d1r2_32.bin','wb+')
+    print "Arquivo arqDestino aberto!"
+except IOError:
+      print "Erro ao abrir o arquivo"
 
+from time import time
+from random import randint
+
+def ca_data1(height,width,dorandom,rulenum):
+
+# Convert the rule number to a list of outcomes. 
+   rule = [(rulenum/pow(2,i)) % 2 for i in range(32)]
+  
+   vetNum = []
+   data1 = [(0) for i in range(height)]
+   vetor = [(0) for i in range(height)]
+  
+   for passo in range(100):
+      vetor = [(0) for i in range(height*width)]
+# Create the first row, either randomly, or with a single 1
+      if dorandom:
+            first_row = [randint(0,1) for i in range(width)]
+      else:
+            first_row = [0]*width
+            first_row[width/2] = 1
+      results = [first_row]
+      
+      data = results[-1]      
+      p=0
+      for i in range(height): 
+          for j in range(width):
+            if (j > 1 and j < width-2):
+               new = rule[16*data[j-2]+8*data[j-1]+4*data[j]+2*data[j+1]+data[j+2]]
+            elif (j == 0):
+               new = rule[16*data[width-2]+8*data[width-1]+4*data[j]+2*data[j+1]+data[j+2]]
+            elif (j == 1):
+               new = rule[16*data[width-1]+8*data[j-1]+4*data[j]+2*data[j+1]+data[j+2]]
+            elif (j == width-1): 
+               new = rule[16*data[j-2]+8*data[j-1]+4*data[j]+2*data[0]+data[1]]
+            elif (j == width-2): 
+               new = rule[16*data[j-2]+8*data[j-1]+4*data[j]+2*data[j+1]+data[0]]  
+            data1[j] = new
+            
+          for j in range(width):
+            data[j] = data1[j]        
+            vetor[p] = data1[j]
+            p +=1            
+         
+      print "salvando arquivo....",passo
+
+      for l in range(0,height*width-1,8):
+         j=0
+         num = 0
+         k = l
+         while (j < 8):
+            num = num + 2**j * vetor[k]
+            j += 1
+            k += 1
+         vetNum.append(num)
+         tamNum = len(vetNum)
+                
+      for ind in range(tamNum):  
+         arqDestino.write(chr(vetNum[ind]))
+      vetNum = []  
+   else:
+      print "Arquivos fechado!"
+      arqDestino.close()
+      return
+  
+def main():
+    height = 31250
+    width = 32
+    dorandom = 1
+    rule = 1436194405
+
+    ti = time()
+    data = ca_data1(height,width,dorandom,rule)
+    tf = time()
+    print "Generation Time: ", (tf - ti), " Seconds"
+    return
+if __name__ == '__main__': main()
