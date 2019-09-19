@@ -1,1 +1,95 @@
+#!/usr/bin/env python
+try:
+    arqDestino = open('/Hibrido90_150_64','wb')
+    print "Arquivo arqDestino aberto!"
+except IOError:
+      print "Erro ao abrir o arquivo"
 
+"""
+CellularAutomata.py: Wolfram-style cellular automata in Python
+"""
+import getopt,sys,os,string,struct
+from random import randint
+def ca_data1(height,width,dorandom):
+     vetor = []
+     vet1 = []
+     
+"""Tabela A table of Primitive Binary Polinomials 31,16,14,10,8,1,0 """
+     #results1 =[[
+#1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,1,0,0,0,0,0,0,1,1]]
+
+"""Com 64 celulas retirado da 'A table of Primitive Binary Polinomials' 63,60,22,18,8,5,0"""
+
+     results1 = [[
+1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,1]]
+
+"""Com 128 celulas retirado da 'A table of Primitive Binary Polinomials'      127,97,68,67,38,31,0"""
+
+     #results1 = [[
+#1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,
+#0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,
+#0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,
+#1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1]]
+           
+     rule90 = [(90 / pow(2, i)) % 2 for i in range(8)]
+     rule150 = [(150 / pow(2, i)) % 2 for i in range(8)]
+    
+     for coluna in range(width):
+           vet1.append(results1[0][coluna]) 
+    
+     for passo in range(100):
+        # Create the first row, either randomly, or with a single 1
+        if dorandom:
+           first_row = [randint(0,1) for i in range(width)]
+        else:
+           first_row = [0]*width
+           first_row[width/2] = 1
+        results = [first_row]
+                     
+        for i in range(height-1):
+            data = results[-1]
+            row = []
+            for j in range(width):
+
+                L = 0 if (j-1) < 0 else data[j-1]
+                C = data[j]
+                R = 0 if (j+1) >= width else data[j+1]
+		
+                if vet1[j] == 0:
+                    # rule 90
+                    new = rule90[4 * (L % width) + (2 * C) + (R % width)]
+                    #new = L ^ R
+                else:
+                    # rule 150
+		    new = rule150[4 * (L % width) + (2 * C) + (R % width)]
+                    #new = L ^ C ^ R                
+                row.append(new)                
+            results.append(row)
+           
+        for linha in range(height):
+          for coluna in range(width):
+               vetor.append(results[linha][coluna])
+                     
+        #print "estou passando por aqui", passo
+        tamVet = len(vetor)
+        print "salvando arquivo...."
+        for j in range(tamVet):
+           arqDestino.write(str(vetor[j])) 
+        vetor = []
+
+     else:
+        print "Arquivos fechado!"
+        arqDestino.close()
+        return
+
+def main():
+    
+    height = 15625
+#31250  15625  7813  1000000
+    width = 64
+#32   64   128
+    dorandom = 1
+    data = ca_data1(height,width,dorandom)
+    return
+if __name__ == '__main__': main()
