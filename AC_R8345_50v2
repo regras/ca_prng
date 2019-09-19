@@ -1,0 +1,132 @@
+#!/usr/bin/env/ python
+from random import randint
+from time import time
+
+def tobin(n, bits):
+    bina = [(int(n / pow(2, i)) % 2) for i in range(bits)]
+    return bina
+
+def create_blank_matrix(rows, columns):
+    row = []
+    for i in range(rows):
+        column = [0] * columns
+        row.append(column)
+    return row
+
+def create_environment(rows, columns, random, pas):
+    row = []
+    if random:
+        for i in range(rows):
+            column = [randint(0, 1) for j in range(columns)]
+            row.append(column)
+    else:
+        for i in range(rows):
+            column = [0] * columns
+            row.append(column)
+        row[rows / 2][columns / 2] = 1        
+    return row
+
+def define_rule(data, rows, columns, rule, temp0):
+    temp = temp0
+    for i in range(rows):
+        for j in range(columns):
+            
+            West = data[i][j - 1] if j > 0 else data[i][(columns - 1)]
+            North = data[i - 1][j] if i > 0 else data[(rows - 1)][j]            
+            South = data[i + 1][j] if i < (rows - 1) else data[0][j]            
+            East = data[i][j + 1] if j < (columns - 1) else data[i][0]
+            
+            temp[i][j] = rule[16 * North + 8 * West + 4 * data[i][j] + 2 * East + South]   
+    return temp
+
+def build_CA(rows, columns, random, rule, temp0, layersnum):
+ 
+ vetor = [(0) for i in range(layersnum*(rows*columns/2))]
+ path = "AC8354d2r1_8x8_50Lin2Col1.bin"
+ 
+ try:
+    file_CA = open(path, "wb+")
+    print("Opening File")
+ except IOError:
+    raise("File Opening Error!!!!")
+ 
+ for pas in range(101):   
+    vetNum = [] 
+    if pas == 0: 
+       dataN = [[1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+               [1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1], 
+               [1, 1, 1, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 1, 0], 
+               [1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0]]
+
+       data = [[0, 1, 0, 0, 1, 0, 0, 1], 
+               [0, 1, 0, 1, 0, 0, 1, 0],
+               [0, 0, 0, 1, 0, 0, 0, 1],
+               [0, 0, 0, 0, 1, 1, 1, 0], 
+               [1, 1, 1, 1, 1, 0, 1, 1],
+               [1, 1, 0, 0, 0, 0, 0, 1],
+               [0, 1, 0, 0, 1, 0, 1, 1],
+               [0, 0, 1, 1, 1, 1, 0, 1]]
+
+       dataN = [[1, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 1, 1, 0, 1, 1],
+               [0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+               [0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 1, 0, 0], 
+               [1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1]]
+
+       dataN = [[1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1], 
+               [0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1], 
+               [0, 0, 1, 1, 0, 0, 1, 1, 0, 1, 1, 0, 0, 1, 1, 1], 
+               [1, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0], 
+               [1, 1, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1], 
+               [0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0],
+               [1, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0],
+               [1, 1, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0]]
+    
+    else:
+      #enviroment = create_environment(rows, columns, random, pas)
+      #data = enviroment
+     kl = 0
+     for k in range(layersnum):     
+        data = define_rule(data, rows, columns, rule, temp0)
+
+     for linha in range(0,rows,2):                    
+         for coluna in range(0,columns,1):           
+               vetor[kl] = data[linha][coluna]                                
+               kl = kl + 1
+     else:   
+       print "salvando arquivo....", pas       
+       for l in range(0,kl-1,8):
+         j=0
+         num = 0
+         k = l
+         while (j < 8):         
+            num = num + 2**j * vetor[k]
+            j += 1
+            k += 1
+         vetNum.append(num)        
+         tamNum = len(vetNum)         
+              
+       for ind in range(tamNum):  
+          file_CA.write(chr(vetNum[ind]))    
+ else:
+     print("Closing File")
+     file_CA.close()
+     return data
+
+if __name__ == "__main__":
+    prop = 2
+    rows = 8
+    columns = 8   
+    qteCol = (rows * columns)/prop    
+    rulenum = 1453938345 
+    layersnum = 1000000/qteCol
+    random = 1
+
+    rule = tobin(rulenum, 32)
+
+    temp0 = create_blank_matrix(rows, columns)
+
+    ti = time()
+
+    data = build_CA(rows, columns, random, rule, temp0, layersnum)
+    tf = time()
+    print "Generation Time: ", (tf - ti), " Seconds"
