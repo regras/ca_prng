@@ -4,7 +4,6 @@ try:
     print "Arquivo arqDestino aberto!"
 except IOError:
       print "Erro ao abrir o arquivo"
-
 from time import time
 from random import randint
   
