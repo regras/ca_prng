@@ -1,1 +1,84 @@
+#!/usr/bin/env python
+try:     
+    arqDestino = open('CA30d1r1_32.bin','wb+')   
+    print "Arquivo arqDestino aberto!"
+except IOError:
+      print "Erro ao abrir o arquivo"
+"""
+CellularAutomata.py: Wolfram-style cellular automata in Python
+"""
+from time import time
+from random import randint
+  
+def ca_data1(height,width,dorandom,rulenum):
 
+   rule = [(rulenum/pow(2,i)) % 2 for i in range(8)]
+   vetNum = []
+   data1 = [(0) for i in range(height)]  
+   vetor = [(0) for i in range(height*width)]
+   
+   for passo in range(100):
+        vetor = [(0) for i in range(height*width)]
+   # Create the first row, either randomly, or with a single 1
+        if dorandom:
+          first_row = [randint(0,1) for i in range(width)]
+        else:
+          first_row = [0]*width
+          first_row[width/2] = 1
+        results = [first_row]
+       
+        data = results[-1]        
+        p = 0
+
+        for i in range(height): 
+          for j in range(width):
+            if (j > 0 and j < width-1):               
+               new = rule[4*data[j-1]+2*data[j]+data[j+1]]               
+            elif (j == 0):
+               new = rule[4*data[width-1]+2*data[j]+data[j+1]]               
+            elif (j == width-1): 
+               new = rule[4*data[width-2]+2*data[j]+data[0]]               
+            data1[j] = new
+           
+          for j in range(width):
+            data[j] = data1[j]
+            vetor[p] = data1[j]
+            p += 1 
+                   
+        print "salvando arquivo....",passo
+        
+        for l in range(0,height*width-1,8):
+            j=0
+            num = 0
+            k = l
+            while (j < 8):                
+                num = num + 2**j * vetor[k]
+                j += 1
+                k += 1
+            vetNum.append(num)
+        
+        tamNum = len(vetNum)
+                
+        for ind in range(tamNum):  
+            arqDestino.write(chr(vetNum[ind]))
+        vetNum = []  
+   else:
+      print "Arquivos fechado!"
+      arqDestino.close()
+      return
+
+def main():
+    
+    height = 31250
+#31250 12500 7813
+    width = 32
+#32 64 128
+    dorandom = 1
+    rule = 30
+    
+    ti = time()
+    data = ca_data1(height,width,dorandom,rule)
+    tf = time()
+    print "Generation Time: ", (tf - ti), " Seconds"    
+    return
+if __name__ == '__main__': main()
